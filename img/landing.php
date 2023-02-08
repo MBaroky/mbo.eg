@@ -1,0 +1,71 @@
+<?php include('header.php'); ?>
+    <div id="landing-banner" class="jumbotron landing-banner inner-banner">
+        <div class="container-fluid">
+            <div class="row is-flex">
+                <div class="col-lg-3 col-md-3 ">
+                    <div class="arrow bottom right">
+                        <h2> Your Business <small> WILL START HERE </small></h2>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 ">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="duda-templates inner" id="duda-templates">
+        <div class="container gallery landing-gallery">
+            <?php 
+            //Set API user and password
+            $API_USER = '3d4f615c61';
+            $API_PASS = 'Kc3fC9Bq6aN6';
+            //Set parameters to make cURL call to Duda
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            curl_setopt($ch, CURLOPT_URL, 'https://api.dudamobile.com/api/sites/multiscreen/templates');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_USERPWD, $API_USER.':'.$API_PASS);
+            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            //execute cURL call and get template data
+            $output = curl_exec($ch);
+            //check for errors in cURL
+            if(curl_errno($ch)) {
+                die('Curl error: ' . curl_error($ch));
+            }
+            $output = json_decode($output);
+            //var_dump($output);
+            //Loop through all templates and display all the available templates in a table
+            $i = 4;
+            foreach($output as $template) {
+                if ($i % 4 == 0 ) {
+                    echo '<div class="row">';
+                }
+                echo '<div class="col-lg-3 col-sm-6 col-xs-12">
+
+                        <a href='.$template->preview_url.' target="_blank" class="thumbnail">
+                            <img class="img-responsive contain" src=' . $template->thumbnail_url. '>
+                            <span class="caption text-center">
+                                <h3 class="text-center">'.$template->template_id.'</h3>'.
+                            '</span>
+                        </a>
+
+
+                      </div>';
+                $i++;
+                if ($i % 4 == 0 ) {
+                    echo '</div>';
+                }
+            }
+
+            ?>
+        </div>
+    </div>
+    <?php include('footer.php'); ?>
+
+
+        </body>
+
+        </html>

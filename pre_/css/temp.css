@@ -1,0 +1,95 @@
+#contact-banner.inner-banner .container .row h2{
+    text-align: right !important;
+}
+.fb-gallery.gallery .thumbnail .caption:before, 
+.fb-gallery.gallery .thumbnail .caption:after{
+    opacity: 0 !important;
+}
+html.touchevents .gallery .filterCont .filter-nav{
+        width: 100px;
+    height: 120%;
+    z-index: 100;
+    transform: translateY(-43px);
+}
+html.touchevents .gallery .filterCont .filter-nav.next{
+    margin-right: -40px;
+}
+html.touchevents .gallery .filterCont .filter-nav.prev{
+    margin-left: -40px;
+}
+.up-button, .up-button:hover{
+        width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+        justify-content: center;
+    position: fixed;
+    bottom: 201px;
+    right: 20px;
+    opacity: 0;
+/*    transform: scale(1.025);*/
+    outline: 0;
+/*
+    background-image: url(../img/button.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+*/
+    z-index: 1000;
+    transition: opacity 400ms ease-in-out;
+/*    border:2px #1C1C1C solid;*/
+    border: 0;
+    box-shadow: 0 0 0 1px #fff;
+    border-radius: 50%;
+    background-color: rgba(28, 28, 28, 0.4);
+    animation: Down .7s linear .2s infinite alternate;
+}
+.up-button svg{
+    max-width: 88%;
+    max-height: 88%;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    box-shadow: 0 0 0 1px #fff;
+    border:0;
+    outline:0;
+    transform: rotate(180deg);
+}
+.up-button svg *{
+    fill: #fff;
+}
+@keyframes Down{
+    0% {
+    transform: translateY(0);
+}
+100% {
+    transform: translateY(10%);
+}
+
+}
+#top-header{
+    flex-flow: row nowrap;
+}
+
+.contact-form .page-header h1{
+    line-height: 48px;
+    text-transform: none;
+}
+    
+.contact-form .page-header h1, .contact-form .form-title h1, 
+.contact-form .page-header small, .contact-form .form-title small{
+    font-size: 22px;
+}
+.contact-form .form-title h1>span{
+    color: #e80000;
+}
+.contact-form .page-header small, .contact-form .form-title small{
+    
+}
+.contact-form .page-header h1{
+    font-weight: normal !important;
+    
+}
+.contact-form .page-header h1 small span{
+    font-weight: bold !important;
+}
