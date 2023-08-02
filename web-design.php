@@ -569,7 +569,7 @@
                 </button>
 
         </div>
-        <!-- <?php global $pageval; $pageval = "WebDesign"; include('form_page.php'); ?> -->
+        <?php global $pageval; $pageval = "WebDesign"; include('form_page.php'); ?>
     </div>
 </div>
 <!-- end of #fb-gallery-->

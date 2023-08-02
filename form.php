@@ -1,5 +1,5 @@
 <?php
-require 'PHPMailer-master/PHPMailerAutoload.php';
+// require 'PHPMailer-master/PHPMailerAutoload.php';
 $englishMessages = array(
 "SUBMIT_SUCCESSFULLY"=>"<div class=sentMailSuc>Your request has been sent. </br>Please expect a call shortly from one of our Media Consultants.</div>",
 "SUBMIT_FAILED"=>"Failed",
@@ -36,32 +36,32 @@ if ( isset($_REQUEST['formRequesterFirstName']) && $_REQUEST['formRequesterFirst
 
 	//Email
 	$from = @$_REQUEST['formRequesterEmail'];
-    
+
 	//city
 	$city = @$_REQUEST['formRequesterCity'];
-    
+
     //companyname
 	$companyname = @$_REQUEST['formRequesterCompanyName'];
-    
+
     //website
 	$website = @$_REQUEST['formRequesterWebsite'];
-  
+
     //BusinessActivity
 	$businessactivity = @$_REQUEST['formRequesterBusinessActivity'];
-    
+
     //title
 	$title = @$_REQUEST['formRequesterTitle'];
-   
+
     //other
-	$other = @$_REQUEST['formRequesterOther'];    
- 
+	$other = @$_REQUEST['formRequesterOther'];
+
     //timefrom
-	$timefrom = @$_REQUEST['formRequesterTimefrom'];  
- 
+	$timefrom = @$_REQUEST['formRequesterTimefrom'];
+
     //timeto
-	$timeto = @$_REQUEST['formRequesterTimeto']; 
-   
-    //message   
+	$timeto = @$_REQUEST['formRequesterTimeto'];
+
+    //message
 	$message = @$_REQUEST['formRequesterMessage'];
 
 
@@ -109,21 +109,21 @@ if ( isset($_REQUEST['formRequesterFirstName']) && $_REQUEST['formRequesterFirst
 	$emailContent = preg_replace('/-##MOBILE##-/',$mobile,$emailContent);
 
 	$emailContent = preg_replace('/-##EMAIL##-/',$from,$emailContent);
-    
+
     $emailContent = preg_replace('/-##CITY##-/',$city,$emailContent);
-    
+
     $emailContent = preg_replace('/-##COMPANYNAME##-/',$companyname,$emailContent);
-    
+
     $emailContent = preg_replace('/-##WEBSITE##-/',$website,$emailContent);
-    
+
     $emailContent = preg_replace('/-##BUSINESSACTIVITY##-/',$businessactivity,$emailContent);
-    
+
     $emailContent = preg_replace('/-##TITLE##-/',$title,$emailContent);
-    
+
     $emailContent = preg_replace('/-##OTHER##-/',$other,$emailContent);
-    
+
     $emailContent = preg_replace('/-##TIMEFROM##-/',$timefrom,$emailContent);
-    
+
     $emailContent = preg_replace('/-##TIMETO##-/',$timeto,$emailContent);
 
     $emailContent = preg_replace('/-##MESSAGE##-/',$message,$emailContent);
