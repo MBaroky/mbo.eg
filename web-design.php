@@ -31,7 +31,7 @@
 <div class="showcase-content gallery gallery-load inner landing-gallery" id="showcase-gallery">
     <div class="container">
         <div class="row">
-           
+
             <div class="text-center brief">
                 We lend an expert hand in designing your website to attract more customers to your business.
             </div>
@@ -569,7 +569,7 @@
                 </button>
 
         </div>
-        <?php global $pageval; $pageval = "WebDesign"; include('form_page.php'); ?>
+        <!-- <?php global $pageval; $pageval = "WebDesign"; include('form_page.php'); ?> -->
     </div>
 </div>
 <!-- end of #fb-gallery-->
