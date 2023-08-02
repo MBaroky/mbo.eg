@@ -6,6 +6,8 @@ BrowserMatch ^Mozilla/4\.0[678] no-gzip
 BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 </ifmodule>
 
+
+
 # Expires Headers - 2678400s = 31 days
 <ifmodule mod_expires.c>
   ExpiresActive On
