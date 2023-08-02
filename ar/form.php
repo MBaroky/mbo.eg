@@ -1,5 +1,5 @@
 <?php
-require 'PHPMailer-master/PHPMailerAutoload.php';
+// require 'PHPMailer-master/PHPMailerAutoload.php';
 $englishMessages = array(
 "SUBMIT_SUCCESSFULLY"=>"<div class=sentMailSuc>Your request has been sent. </br>Please expect a call shortly from one of our Media Consultants.</div>",
 "SUBMIT_FAILED"=>"Failed",
